@@ -54,7 +54,7 @@ eventlistener:
 
 
 
-## States y States Transitions
+## States & Transitions
 - splashScreen
 - gameScreen
 - gameoverScreen
