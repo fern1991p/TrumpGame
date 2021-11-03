@@ -1,0 +1,23 @@
+#screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  /* start {
+    position: absolute;
+    background-color: #f9876c;
+    font-stretch: expanded;
+    font-size: medium;
+    font-weight: bold;
+    color: #3c3a4f;
+    outline: none;
+    top: 55.5%;
+    left: 37.6%;
+    width: 296px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  } */

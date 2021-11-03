@@ -3,24 +3,24 @@ https://github.com/fern1991p/mygame
 
 
 ## Description
-In this game, you will need to help Trump to avoid vaccines while collectiing a bunch of fake news!
+In this game, you will need to help Trump to avoid vaccines while collectiing a bunch of bottles of bleach!
 
 
 ## MVP
-The game has one main caracther, that moves horizontally on the floor.
-Caracther needs to avoid collison with vacines
+The game has one main character, that moves horizontally on the floor.
+character needs to avoid collison with vacines
 It will use the left and right arrow to avoid collection.
 Vaccines will apper randomly from the top of the screen.
 Fake news will also be falling from the sky, if you collect them you get +50 on your score.
 It you get hit by a vaccine, you have the game over screen.
-In your game over screen, you will have "congratulations, but hey, you got to live!" 
+In your game over screen, you will have "congratulations, but hey, you get to live!" 
 Score page should be looking like a vaccine passport.
 
 
 ## Backlog
-add scoreboard
-make it faster
-maybe add more obstacles.
+Add scoreboard
+Make it faster
+Add more obstacles
 
 
 ## Data structure
@@ -40,7 +40,6 @@ animation()
 loops,
 update canvas
 collision()
-!!!!!
 draw()
 	drawTrump()
 	ctx
@@ -54,7 +53,7 @@ eventlistener:
 
 
 
-## States & Transitions
+## States y States Transitions
 - splashScreen
 - gameScreen
 - gameoverScreen
@@ -62,25 +61,18 @@ eventlistener:
 
 
 ## Task
-remove background images 
-build skectch
-build presentation page 
- 	-> start buttom 
-	-> new canvas 
-build game page 
- 	-> start buttom 
-	-> new canvas 
-build gameover page 
- 	-> restarr buttom 
-	-> new canvas 
+Build sketch and edit images
+Build presentation page (start buttom, new canvas) 
+Build game page (start buttom, new canvas) 
+Build gameover page (restart buttom, new canvas) 
 
 
 ## Additional Links
 
 
 ### Trello
-[Link url](https://trello.com)
+
 
 
 ### Slides
-[Link Slides.com](http://slides.com)
+https://docs.google.com/presentation/d/1CnyTh2ARDbDleEV779RRGl8hzIoayW2nS1OW4WN7aOg/edit?usp=sharing
