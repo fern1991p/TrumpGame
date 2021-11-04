@@ -83,10 +83,10 @@ function animation(){
     ctx.drawImage(trump, trumpX, trumpY, trumpWidth, trumpHeight)
 
     if (isRight && trumpX + trumpWidth < canvas.width){
-        trumpX = trumpX + 5
+        trumpX = trumpX + 7
     }
     else if (isLeft && trumpX > 0){
-        trumpX = trumpX - 5
+        trumpX = trumpX - 7
     }
 
     let previousX = 0;
@@ -122,7 +122,7 @@ function animation(){
             obj[i].y = - Math.floor(Math.random()* (canvas.width/2))
         }
         
-        // Collision Vaccin -----
+        // Collision Vaccin
         if (obj[i].img === vac && trumpX + trumpWidth > obj[i].x && trumpX < obj[i].x + 60 && obj[i].y + 60 >= canvas.height - trumpHeight){
             gameOver = true
             
@@ -133,12 +133,20 @@ function animation(){
             gameOver = true
         }
 
-        if (score == 3){
+        if (score == 4){
             decObj = 5 
         }
 
-        if (score == 6){
-            decObj = 6
+        if (score == 7){
+            decObj = 5.5
+        }
+
+        if (score == 9){
+            decObj = 6 
+        }
+
+        if (score == 12){
+            decObj = 6.7
         }
 
         
@@ -180,7 +188,7 @@ for (i=0; i<clouds.length; i++){
 
 }
 
-        if (putinTime % 4 === 0 && putinTime > 2){
+        if (putinTime % 2 === 0 && putinTime > 2){
             putinShow = true
         }
         if (putinShow){ 
@@ -246,19 +254,21 @@ function restart(){
         // {x: 425, y: objY - 240, img: vac},
         // {x: 500, y: objY - 360, img: vac}
     ]
-    let clouds = [
+    clouds = [
         {x: 10, y: 10, img: cloud},
         {x: 230, y: 65, img: cloud},
         {x: 420, y: 20, img: cloud},
         {x: 550, y: 15, img: cloud},
     ]
     
-    let kimArr = [
+    kimArr = [
        {x: 750, y: 475}
     ]
-    let putinArr = [
+    putinArr = [
         {x: 750, y: 300}
      ]
+     kimShow = false
+     putinShow = false
     handleStart()
 }
 
