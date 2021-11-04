@@ -1,5 +1,3 @@
-
-// score 0 
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 canvas.style.border = '2px solid black';
@@ -30,6 +28,10 @@ musicObj.src = "fakenews.mp3"
 let musicBackground = new Audio();
 musicBackground.src = "backgroundmusic.wav"
 
+//-------------------------------------
+// VARIABLES
+//-------------------------------------
+
 
 let intervalId = 0
 let gameOver = false 
@@ -49,13 +51,17 @@ let kimTime = 0
 let putinShow = false;
 let putinTime = 0
 
+//-------------------------------------
+// ARRAYS
+//-------------------------------------
+
 let obj = [
     {x: 60, y: objY, img: fake},
     {x: 100, y: objY + 300, img: fake},
     {x: 230, y: objY - 300, img: vac},
     {x: 300, y: objY - 200, img: vac},
     {x: 425, y: objY - 240, img: vac},
-    // {x: 550, y: objY - 360, img: vac},
+    {x: 550, y: objY - 360, img: vac}
     // {x: 600, y: objY + 400, img: vac},
     // {x: 380, y: objY - 200, img: vac},
     // {x: 425, y: objY - 240, img: vac},
@@ -76,9 +82,11 @@ let putinArr = [
     {x: 750, y: 300}
  ]
 
+//-------------------------------------
+// FUNCTIONS
+//-------------------------------------
+
 function animation(){
-
-
     ctx.drawImage (gs, 0, 0)
     ctx.drawImage(trump, trumpX, trumpY, trumpWidth, trumpHeight)
 
@@ -105,7 +113,11 @@ function animation(){
         previousX = obj[i].x
         previousY = obj[i].y
         }  
-        // Collision fake news -----
+        
+//-------------------------------------
+// COLLISIONS | FAKE NEWS / BLEACH
+//-------------------------------------
+
         if (obj[i].img === fake && trumpX + trumpWidth > obj[i].x && trumpX < obj[i].x + 60 && obj[i].y + 60 >= canvas.height - trumpHeight){
             score++
             kimTime++
@@ -122,17 +134,19 @@ function animation(){
             obj[i].y = - Math.floor(Math.random()* (canvas.width/2))
         }
         
-        // Collision Vaccin
+//-------------------------------------
+// COLLISIONS | VACCINE
+//-------------------------------------
+
         if (obj[i].img === vac && trumpX + trumpWidth > obj[i].x && trumpX < obj[i].x + 60 && obj[i].y + 60 >= canvas.height - trumpHeight){
             gameOver = true
-            
-
-
-        }
+            }
         if (obj[i].img === vac && trumpX < obj[i].x && trumpX + trumpWidth > obj[i].x && obj[i].y + 60 >= canvas.height - trumpHeight){
             gameOver = true
         }
-
+//-------------------------------------
+// SCORES AND SPEED
+//-------------------------------------
         if (score == 4){
             decObj = 5 
         }
@@ -151,7 +165,9 @@ function animation(){
 
         
     }
-
+//-------------------------------------
+// CLOUDS
+//-------------------------------------
 
 for (i=0; i<clouds.length; i++){
     ctx.drawImage(cloud, clouds[i].x, clouds[i].y) 
@@ -163,14 +179,9 @@ for (i=0; i<clouds.length; i++){
       }
 
 }
-
-
-
-
-
-
-
-    
+//-------------------------------------
+// KIM, THE DICTATOR POPING UP
+//-------------------------------------    
     if (kimTime % 9 === 0 && kimTime > 2){
         kimShow = true
     }
@@ -187,6 +198,10 @@ for (i=0; i<clouds.length; i++){
     }
 
 }
+
+//-------------------------------------
+// PUTIN, THE DICTATOR POPING UP
+//------------------------------------- 
 
         if (putinTime % 2 === 0 && putinTime > 2){
             putinShow = true
@@ -205,12 +220,15 @@ for (i=0; i<clouds.length; i++){
 
         }
 
-
-
-
-
+//-------------------------------------
+// SCORES
+//------------------------------------- 
     ctx.font = '27px Verdana'
     ctx.fillText(`Score: ${score}`, 30, canvas.height - 650 )
+
+//-------------------------------------
+// GAME OVER
+//------------------------------------- 
 
 if (gameOver){
     cancelAnimationFrame(intervalId);
@@ -226,8 +244,6 @@ else{
     intervalId = requestAnimationFrame(animation);
     }
 }
-
-
 function handleStart(){
     startBtn.style.display = "none"
     canvas.style.display = " "; 
@@ -236,7 +252,6 @@ function handleStart(){
     musicBackground.volume = 0.1
     musicBackground.loop = true;
 }
-
 function restart(){
     score = 0;
     kimTime = 0;
@@ -272,6 +287,9 @@ function restart(){
     handleStart()
 }
 
+//-------------------------------------
+// ADD EVENT LISTENER
+//------------------------------------- 
 
 window.addEventListener('load', () => {
     ctx.drawImage (bg, 0, 0)
@@ -306,4 +324,3 @@ window.addEventListener('load', () => {
     }     
     })
 })
-
